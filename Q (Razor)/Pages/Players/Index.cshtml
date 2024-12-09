@@ -1,0 +1,270 @@
+﻿@page
+@model Q__Razor_.Pages.Products.IndexModel
+
+@{
+    ViewData["Title"] = "Players List";
+}
+
+<h1 style="text-align: center;">My DB Queries</h1>
+
+
+<form action="" method="post" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: 800px; margin: auto;">
+
+    <button asp-page="" asp-page-handler="PlayersByID" class="btn btn-primary">
+        Press here to see players
+    </button>
+    <button asp-page="" asp-page-handler="PlayersByName" class="btn btn-primary">
+        Press here to see players by name
+    </button>
+    <button asp-page="" asp-page-handler="ByNamesWithLastGame" class="btn btn-primary">
+        Press here to see Players and their last game
+    </button>
+    <button asp-page="" asp-page-handler="GamesById" class="btn btn-primary">
+        Press here to see Games
+    </button>
+    <button asp-page="" asp-page-handler="PlayerByCountry" class="btn btn-primary">
+        Press here to see First Player by Country
+    </button>
+    <button asp-page="" asp-page-handler="CountByPlayer" class="btn btn-primary">
+        Press here to see number of games by player
+    </button>
+    <button asp-page="" asp-page-handler="PlayersByGamesCount" class="btn btn-primary">
+        Press here to see players by count of games
+    </button>
+    <button asp-page="" asp-page-handler="PlayersByCountry" class="btn btn-primary">
+        Press here to see players by country
+    </button>
+       <div class="col-12 d-flex justify-content-center align-items-center my-2 py-1">
+        <h3 class="mb-0 me-3 fs-5">Select a Player</h3> <!-- Smaller font size -->
+        <select class="form-control" style="width: 200px;" onchange="this.blur();">
+            <option value="" disabled selected>-- Select a Player --</option>
+            @foreach (var playerName in Model.PlayersNames)
+            {
+                <option value="@playerName">@playerName</option>
+            }
+        </select>
+    </div>
+
+</form>
+
+
+
+
+
+
+
+@if (ViewData["ShowTable"] == "PlayersByID")
+{
+    <!-- Table for displaying all players -->
+    <table class="greenTable">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.TblPlayers[0].ID)</th> <!-- ID Column -->
+                <th>@Html.DisplayNameFor(model => model.TblPlayers[0].Name)</th> <!-- Name Column -->
+                <th>@Html.DisplayNameFor(model => model.TblPlayers[0].Phone)</th> <!-- Phone Column -->
+                <th>@Html.DisplayNameFor(model => model.TblPlayers[0].Country)</th> <!-- Country Column -->
+                <th>Actions</th> <!-- Actions Column (Edit/Delete) -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var player in Model.TblPlayers)
+            {
+                <tr>
+                    <td style="text-align: left;">@Html.DisplayFor(modelItem => player.ID)</td> <!-- ID Value -->
+                    <td style="text-align: left;">@Html.DisplayFor(modelItem => player.Name)</td> <!-- Name Value -->
+                    <td style="text-align: left;">@Html.DisplayFor(modelItem => player.Phone)</td> <!-- Phone Value -->
+                    <td style="text-align: left;">@Html.DisplayFor(modelItem => player.Country)</td> <!-- Country Value -->
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@player.ID">Edit</a> |
+                         <a asp-page="./Delete" asp-route-id="@player.ID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@if (ViewData["PlayersWithLastGames"] != null)
+{
+    <h3>Games for Player: @ViewData["SelectedPlayer"]</h3>
+
+    <table class="greenTable">
+    <thead>
+        <tr>
+            <th>Player Name</th>
+            <th>Last Game Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (ViewData["PlayersWithLastGames"] != null)
+        {
+            foreach (var player in (IEnumerable<dynamic>)ViewData["PlayersWithLastGames"])
+            {
+                <tr>
+                    <td>@player.Name</td> <!-- Player Name -->
+                    <td>
+                        @if (!string.IsNullOrEmpty(player.LastGameDate))
+                            @player.LastGameDate <!-- Display the string date directly -->
+
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+    </table>
+ }
+ 
+
+
+@if (ViewData["ShowTable"] == "GamesByID")
+{
+    <!-- Table for displaying all players -->
+    <table class="greenTable">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.TblGames[0].GameId)</th> <!-- ID Column -->
+                <th>@Html.DisplayNameFor(model => model.TblGames[0].GameDuration)</th> <!-- GameDuration Column -->
+                <th>@Html.DisplayNameFor(model => model.TblGames[0].GameStartTime)</th> <!-- GameStartTime Column -->
+                <th>@Html.DisplayNameFor(model => model.TblGames[0].PlayerId)</th> <!-- PlayerId Column -->
+               
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var Game in Model.TblGames)
+            {
+                <tr>
+                    <td style="text-align: left;">@Html.DisplayFor(modelItem => Game.GameId)</td> <!-- ID Value -->
+                    <td style="text-align: left;">@Html.DisplayFor(modelItem => Game.GameDuration)</td> <!-- Name Value -->
+                    <td style="text-align: left;">@Html.DisplayFor(modelItem => Game.GameStartTime)</td> <!-- Phone Value -->
+                    <td style="text-align: left;">@Html.DisplayFor(modelItem => Game.PlayerId)</td> <!-- Country Value -->
+                   
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+
+}
+
+@if (ViewData["ShowTable"] == "PlayersByCountry")
+{
+    <table class="greenTable">
+         <thead>
+            <tr>
+                <th>Player ID</th> <!-- ID Column -->
+                <th>Player Name</th> <!-- Name Column -->
+                <th>Country</th> <!-- Country Column -->
+            </tr>
+        </thead>
+        <tbody>
+            @if (ViewData["PlayersByCountry"] != null)
+            {
+                foreach (var player in (IEnumerable<dynamic>)ViewData["PlayersByCountry"])
+                {
+                    <tr>
+                        <td style="text-align: left;">@player.ID</td> <!-- Player ID -->
+                        <td style="text-align: left;">@player.Name</td> <!-- Player Name -->
+                        <td style="text-align: left;">@player.Country</td> <!-- Player Country -->
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+}
+
+@if (ViewData["SelectedPlayerGames"] != null)
+{
+    <h3>Games for Player: </h3>
+    <table class="greenTable">
+        <thead>
+            <tr>
+                <th>Game ID</th>
+                <th>Game Duration</th>
+                <th>Game Start Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var game in (IEnumerable<dynamic>)ViewData["SelectedPlayerGames"])
+            {
+                <tr>
+                    <td>@game.GameId</td>
+                    <td>@game.GameDuration</td>
+                    <td>@((DateTime)game.GameStartTime).ToString("yyyy-MM-dd HH:mm")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@if (ViewData["ShowTable"] == "ByPlayersWithGamesCount")
+{
+    <table class="greenTable">
+         <thead>
+            <tr>
+                <th>Player Name</th> <!-- Name Column -->
+                <th>Number of games</th> <!-- Number of games Column -->
+            </tr>
+        </thead>
+        <tbody>
+            @if (ViewData["playersWithGamesCount"] != null)
+            {
+                foreach (var player in (IEnumerable<dynamic>)ViewData["playersWithGamesCount"])
+                {
+                    <tr>
+                        <td style="text-align: left;">@player.Name</td> <!-- Player Name -->
+                        <td style="text-align: left;">@player.CountOfGames</td> <!-- Player Country -->
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+}
+@if (ViewData["ShowTable"] == "PlayersGroupedByGames")
+{
+    <h3>Players Grouped by Game Count</h3>
+    <table class="greenTable">
+        <thead>
+            <tr>
+                <th>Amount of Games</th>
+                <th>Players Names</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (ViewData["PlayersGroupedByGames"] != null)
+            {
+                foreach (var group in (IEnumerable<dynamic>)ViewData["PlayersGroupedByGames"])
+                {
+                    <tr>
+                        <td>@group.GameCount</td> <!-- Game count -->
+                        <td>@group.PlayerNames</td> <!-- Concatenated player names -->
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+}
+@if (ViewData["ShowTable"] == "PlayersGroupedByCountry")
+{
+    <h3>Players Grouped by Country</h3>
+    <table class="greenTable">
+        <thead>
+            <tr>
+                <th>Country</th>
+                <th>Players Names</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (ViewData["PlayersGroupedByCountry"] != null)
+            {
+                foreach (var group in (IEnumerable<dynamic>)ViewData["PlayersGroupedByCountry"])
+                {
+                    <tr>
+                        <td>@group.Country</td> <!-- Country Name -->
+                        <td>@group.PlayerNames</td> <!-- Concatenated player names -->
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+}

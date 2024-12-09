@@ -1,0 +1,93 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+@if (Request.Query["success"] == "true")
+{
+    <p class="text-success">Player has been successfully added to the database!</p>
+}
+
+<div class="mt-4 mb-4">
+    <a asp-page="./Players/Index">Press here to see the DB queries</a>
+</div>
+<div class="text-left sm-6">
+    <h1 class="mystyle">Our Chess Game</h1>
+    <h2 class="mystyle">Please fill your details below</h2>
+</div>
+
+<div class="row mt-4">
+    <div>
+        <form method="post" autocomplete="on" action="">
+ 
+            <div class="row">
+                <div class="col-sm-2">
+                <label asp-for="Player.Name">Player Name</label>
+                </div>
+                <div class="col-sm-2">
+                <label asp-for="Player.ID"></label>
+                </div>
+                <div class="col-sm-2">
+                <label asp-for="Player.Phone"></label>
+                </div>
+                <div class="col-sm-2">
+                <label asp-for="Player.Country"></label>
+                </div>
+
+            </div>
+                      
+                        <div class="row mb-3">
+                            <div class="col-sm-2">
+                            <input asp-for="Player.Name" class="form-control"/>
+                            <div style="height:20px">
+                            <span asp-validation-for="Player.Name" class="text-danger"></span>
+                            </div>
+                            </div>
+                            <div class="col-sm-2">
+                            <input asp-for="Player.ID" type="number" min=1 max=1000 step=1 class="form-control"/>
+                            <span asp-validation-for="Player.ID" class="text-danger"></span>    
+                            </div>
+                            <div class="col-sm-2">
+                            <input asp-for="Player.Phone" class="form-control"/>
+                            <span asp-validation-for="Player.Phone" class="text-danger"></span>
+                            </div>
+                            <div class="col-sm-2">
+                            <!-- Combo box (Dropdown) for countries -->
+                            <select asp-for="Player.Country" class="form-control">
+                                <option value="">Select Country</option>
+                                <option value="US">United States</option>
+                                <option value="CA">Canada</option>
+                                <option value="GB">United Kingdom</option>
+                                <option value="AU">Australia</option>
+                                <option value="IN">India</option>
+                                <option value="DE">Germany</option>
+                                <option value="AF">Afghanistan</option>
+                                <option value="AL">Albania</option>
+                                <option value="DZ">Algeria</option>
+                                <option value="AS">American Samoa</option>
+                                <option value="AD">Andorra</option>
+                            </select>
+                            <span asp-validation-for="Player.Country" class="text-danger"></span>
+                        </div>
+
+                        </div>
+            
+
+            <div class="form-group mt-4">
+               <button asp-page="" class="btn btn-primary" autofocus>Submit!</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div class="mt-5">
+    <img src="~/Images/chess-game.jpg" title="My chess board" width="40%" height="40%"/>
+</div>
+<div class="mt-5">
+    <a href="Privacy">Press here to see About</a>
+</div>
+
+<div asp-validation-summary="All" class="text-danger"></div>
