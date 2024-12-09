@@ -1,0 +1,100 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\talm\\Downloads\\FinProject\\FinProject\\project\\ClientChessBoard\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{80B2D323-C5F2-4120-BF77-053C5143927D}|ClientChessBoard.csproj|C:\\Users\\talm\\Downloads\\FinProject\\FinProject\\project\\ClientChessBoard\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80B2D323-C5F2-4120-BF77-053C5143927D}|ClientChessBoard.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_TALM_DOWNLOADS_FINPROJECT_FINPROJECT_PROJECT_CLIENTCHESSBOARD_CLIENTDB.MDF/True/SqlTable/dbo.GameState.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80B2D323-C5F2-4120-BF77-053C5143927D}|ClientChessBoard.csproj|C:\\Users\\talm\\Downloads\\FinProject\\FinProject\\project\\ClientChessBoard\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{80B2D323-C5F2-4120-BF77-053C5143927D}|ClientChessBoard.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80B2D323-C5F2-4120-BF77-053C5143927D}|ClientChessBoard.csproj|C:\\Users\\talm\\Downloads\\FinProject\\FinProject\\project\\ClientChessBoard\\models\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80B2D323-C5F2-4120-BF77-053C5143927D}|ClientChessBoard.csproj|solutionrelative:models\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80B2D323-C5F2-4120-BF77-053C5143927D}|ClientChessBoard.csproj|C:\\Users\\talm\\Downloads\\FinProject\\FinProject\\project\\ClientChessBoard\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{80B2D323-C5F2-4120-BF77-053C5143927D}|ClientChessBoard.csproj|solutionrelative:app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "dbo.GameState [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_TALM_DOWNLOADS_FINPROJECT_FINPROJECT_PROJECT_CLIENTCHESSBOARD_CLIENTDB.MDF/True/SqlTable/dbo.GameState.sql",
+              "ToolTip": "dbo.GameState [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-11-21T14:35:24.872Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\talm\\Downloads\\FinProject\\FinProject\\project\\ClientChessBoard\\App.config",
+              "RelativeDocumentMoniker": "App.config",
+              "ToolTip": "C:\\Users\\talm\\Downloads\\FinProject\\FinProject\\project\\ClientChessBoard\\App.config",
+              "RelativeToolTip": "App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-11-21T09:04:52.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Game.cs",
+              "DocumentMoniker": "C:\\Users\\talm\\Downloads\\FinProject\\FinProject\\project\\ClientChessBoard\\Models\\Game.cs",
+              "RelativeDocumentMoniker": "Models\\Game.cs",
+              "ToolTip": "C:\\Users\\talm\\Downloads\\FinProject\\FinProject\\project\\ClientChessBoard\\Models\\Game.cs",
+              "RelativeToolTip": "Models\\Game.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T18:33:53.146Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\talm\\Downloads\\FinProject\\FinProject\\project\\ClientChessBoard\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\talm\\Downloads\\FinProject\\FinProject\\project\\ClientChessBoard\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AgIAAMcCAAAAAAAAAAAwwNgCAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T18:33:53.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\talm\\Downloads\\FinProject\\FinProject\\project\\ClientChessBoard\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\talm\\Downloads\\FinProject\\FinProject\\project\\ClientChessBoard\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T18:33:53.24Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

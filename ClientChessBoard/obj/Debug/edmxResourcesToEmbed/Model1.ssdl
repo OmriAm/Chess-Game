@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ClientDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="GameState">
+    <Key>
+      <PropertyRef Name="GameStateId" />
+    </Key>
+    <Property Name="GameStateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GameId" Type="int" Nullable="false" />
+    <Property Name="Board" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ClientTurn" Type="bit" Nullable="false" />
+    <Property Name="IsNewGame" Type="bit" />
+    <Property Name="IsClientTurn" Type="bit" Nullable="false" />
+    <Property Name="IsChess" Type="bit" Nullable="false" />
+    <Property Name="IsChessMat" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ClientDBModelStoreContainer">
+    <EntitySet Name="GameState" EntityType="Self.GameState" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

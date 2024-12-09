@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ClientDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="GameState">
+    <Key>
+      <PropertyRef Name="GameStateId" />
+    </Key>
+    <Property Name="GameStateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GameId" Type="Int32" Nullable="false" />
+    <Property Name="Board" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClientTurn" Type="Boolean" Nullable="false" />
+    <Property Name="IsNewGame" Type="Boolean" />
+    <Property Name="IsClientTurn" Type="Boolean" Nullable="false" />
+    <Property Name="IsChess" Type="Boolean" Nullable="false" />
+    <Property Name="IsChessMat" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ClientDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="GameState" EntityType="Self.GameState" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ClientDBModelStoreContainer" CdmEntityContainer="ClientDBEntities">
+    <EntitySetMapping Name="GameState">
+      <EntityTypeMapping TypeName="ClientDBModel.GameState">
+        <MappingFragment StoreEntitySet="GameState">
+          <ScalarProperty Name="GameStateId" ColumnName="GameStateId" />
+          <ScalarProperty Name="GameId" ColumnName="GameId" />
+          <ScalarProperty Name="Board" ColumnName="Board" />
+          <ScalarProperty Name="ClientTurn" ColumnName="ClientTurn" />
+          <ScalarProperty Name="IsNewGame" ColumnName="IsNewGame" />
+          <ScalarProperty Name="IsClientTurn" ColumnName="IsClientTurn" />
+          <ScalarProperty Name="IsChess" ColumnName="IsChess" />
+          <ScalarProperty Name="IsChessMat" ColumnName="IsChessMat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
